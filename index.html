@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Formatter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <textarea id="inputCode" placeholder="Enter your code here..."></textarea>
+      <button onclick="formatCode()">Convert</button>
+      <textarea id="outputCode" placeholder="Formatted code will appear here..." readonly></textarea>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+<style>
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  textarea {
+    width: 80%;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+<script>
+  function formatCode() {
+    var input = document.getElementById('inputCode').value
+    var formattedCode = input.replace(/\s+/g, ' ').trim()
+    document.getElementById('outputCode').value = formattedCode
+  }
+</script>
